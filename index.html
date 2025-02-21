@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GDG AI Chatbot Resources</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            display: flex;
+        }
+        .sidenav {
+            height: 100vh;
+            width: 200px;
+            position: fixed;
+            left: 0;
+            top: 0;
+            background: #003f7f;
+            padding-top: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+        .sidenav a {
+            padding: 15px;
+            text-decoration: none;
+            font-size: 18px;
+            color: white;
+            display: block;
+            text-align: center;
+        }
+        .sidenav a:hover, .sidenav a.active {
+            background: #0091ff;
+        }
+        .main-content {
+            margin-left: 220px;
+            padding: 20px;
+            flex-grow: 1;
+        }
+        .header {
+            text-align: center;
+            background: linear-gradient(to right, #0073e6, #005bb5);
+            color: white;
+            padding: 15px;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: none;
+        }
+        .container.active {
+            display: block;
+        }
+        .resource, .team-member {
+            margin: 10px 0;
+            padding: 10px;
+            background: #e3f2fd;
+            border-radius: 5px;
+        }
+    </style>
+    <script>
+        function showSection(sectionId) {
+            document.querySelectorAll('.container').forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById(sectionId).classList.add('active');
+            document.querySelectorAll('.sidenav a').forEach(link => {
+                link.classList.remove('active');
+            });
+            document.querySelector(`[href='#${sectionId}']`).classList.add('active');
+        }
+        window.onload = function() {
+            showSection('about');
+        };
+    </script>
+</head>
+<body>
+    <div class="sidenav">
+        <a href="#about" onclick="showSection('about')">About</a>
+        <a href="#resources" onclick="showSection('resources')">Resources</a>
+        <a href="#team" onclick="showSection('team')">Meet the Team</a>
+        <a href="#tools" onclick="showSection('tools')">Tools</a>
+    </div>
+    <div class="main-content">
+        <div class="header">GDG AI Chatbot</div>
+        <div class="container active" id="about">
+            <h2>About</h2>
+            <p>Welcome to the GDG AI Chatbot learning platform. Here, you'll find resources, tools, and information to help you navigate the project and improve your AI skills.</p>
+        </div>
+        <div class="container" id="resources">
+            <h2>Weekly Learning Resources</h2>
+            <div class="resource">
+                <h3>Week 0: Trello Sign Up</h3>
+                <p>Set up Trello accounts and familiarize with the workflow.</p>
+            </div>
+            <div class="resource">
+                <h3>Week 1: Getting Started (Supervisor: Tatenda)</h3>
+                <p>Set up GitHub accounts, Fork GitHub Repo, Learn the GitHub Cycle.</p>
+            </div>
+            <div class="resource">
+                <h3>Week 2: Sample Chatbot & Web Scraping (Supervisor: Ruvarashe)</h3>
+                <p>Collect links for all resources, Assign and scrape relevant websites/pages.</p>
+            </div>
+            <div class="resource">
+                <h3>Week 3: Data Cleaning and Vectorization (Supervisor: Sunday)</h3>
+                <p>Clean and augment data, Vectorize and store processed data.</p>
+            </div>
+            <div class="resource">
+                <h3>Week 4: Connect Vector Database and API (Supervisor: Sunday)</h3>
+                <p>Implement connections between the vector database and the API.</p>
+            </div>
+            <div class="resource">
+                <h3>Week 5: Testing (Supervisor: Solomon)</h3>
+                <p>Run tests on the system and refine functionalities.</p>
+            </div>
+            <div class="resource">
+                <h3>Week 6: Building the Interface (Supervisor: Solomon)</h3>
+                <p>Develop and integrate the user interface.</p>
+            </div>
+            <div class="resource">
+                <h3>Week 7: Finalization and Review (Supervisor: Tatenda)</h3>
+                <p>Conduct a project review, Document final insights and improvements.</p>
+            </div>
+        </div>
+        <div class="container" id="team">
+            <h2>Meet the Team</h2>
+            <div class="team-member">
+                <h3>Name 1</h3>
+                <p>Classification: [Your Classification]</p>
+                <p>Major: [Your Major]</p>
+                <p>Email: [Your Email]</p>
+            </div>
+            <div class="team-member">
+                <h3>Name 2</h3>
+                <p>Classification: [Your Classification]</p>
+                <p>Major: [Your Major]</p>
+                <p>Email: [Your Email]</p>
+            </div>
+            <div class="team-member">
+                <h3>Name 3</h3>
+                <p>Classification: [Your Classification]</p>
+                <p>Major: [Your Major]</p>
+                <p>Email: [Your Email]</p>
+            </div>
+            <div class="team-member">
+                <h3>Name 4</h3>
+                <p>Classification: [Your Classification]</p>
+                <p>Major: [Your Major]</p>
+                <p>Email: [Your Email]</p>
+            </div>
+        </div>
+        <div class="container" id="tools">
+            <h2>Tools</h2>
+            <p>List of tools used in the project can be added here.</p>
+        </div>
+    </div>
+</body>
+</html>
